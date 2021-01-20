@@ -37,6 +37,7 @@ export default {
   watch:{
     // 搜索防抖，最后一次input之后的 0.5s后执行search方法
     input(newValue,oldValue){
+      if(newValue === '') return;
       if(this.timer) clearTimeout(this.timer);
       this.timer = setTimeout(() =>{
         this.search();
