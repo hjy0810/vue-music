@@ -56,30 +56,11 @@ export default {
     fresh(){
       this.getPlaylistDetails();
     }
-
-    // ...mapMutations(['setCurMusicUrl','setCurMusicInfo','setCurPlaylist','setCurMusicIndex']),
-    // playMusic(curMusicInfo,index){
-    //   //设置当前歌曲信息
-    //   localStorage.setItem('curMusicInfo',JSON.stringify(curMusicInfo));
-    //   this.setCurMusicInfo(curMusicInfo);
-
-    //   // 获取当前歌曲的URL
-    //   queryMusicUrl({
-    //     id:curMusicInfo.id,
-    //   }).then(res => {
-    //     let curMusicUrl = res.data[0].url;
-    //     this.setCurMusicUrl(curMusicUrl);
-    //   })
-
-    //   //把当前音乐在歌单中的索引存到vuex中
-    //   this.setCurMusicIndex(index);
-    // }
   },
   created(){
     //获取歌单详情
     this.getPlaylistDetails()
   },
-
 }
 </script>
 

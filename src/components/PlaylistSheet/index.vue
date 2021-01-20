@@ -46,7 +46,6 @@
       </el-col>            
     </el-row>
   </div>
-
 </template>
 
 <script>
@@ -98,7 +97,8 @@ export default {
       this.setIndex(index);
       this.currentIndex = index;
     }
-  }
+  },
+
 }
 </script>
 

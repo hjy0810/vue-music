@@ -4,10 +4,10 @@
      <!-- 搜索结果信息 -->
     <div class="info">
       <span class="keyword">{{ keywords }}</span>
-      <span class="count" v-if='type === 1'>找到{{ count }}首歌曲</span>
-      <span class="count" v-if='type === 1000'>找到{{ count }}个歌单</span>
-      <span class="count" v-if='type === 100'>找到{{ count }}位歌手</span>
-      <span class="count" v-if='type === 1014'>找到{{ count }}个视频</span>
+      <span class="total" v-if='type === 1'>找到{{ total }}首歌曲</span>
+      <span class="total" v-if='type === 1000'>找到{{ total }}个歌单</span>
+      <span class="total" v-if='type === 100'>找到{{ total }}位歌手</span>
+      <span class="total" v-if='type === 1014'>找到{{ total }}个视频</span>
     </div>
 
     <!-- Tags -->
@@ -20,7 +20,7 @@
     <!-- 线 -->
     <div class="line"></div>
 
-    <div class="content">
+    <div class="content" ref="content">
       <PlaylistSheet :songs='songs' v-if='type === 1'/>
 
       <ul class="playlist"  v-if='type === 1000'>
@@ -47,8 +47,16 @@
         />  
       </ul> 
     </div>
-
-
+    <!-- 分页器 -->
+    <!-- <div class="pagination" v-if='show'>
+      <el-pagination
+        @current-change="handleCurrentChange"
+        :page-size="30"
+        :total="300"
+        :background='true'
+        :hide-on-single-page='true'>
+      </el-pagination>
+    </div> -->
   </div>
 </template>
 
@@ -62,7 +70,6 @@ export default {
   data(){
     return {
       keywords:'',
-      count:undefined,
       songs:[],     //单曲列表
       playlists:[],  //歌单列表
       artists:[],   //歌手列表
@@ -72,7 +79,10 @@ export default {
         limit:40,
         offset:0,
         type:1
-      }
+      },
+      total:0, //总数 
+      // page:1, //当前页码
+      // show:false,
     }
   },
   watch:{
@@ -99,48 +109,44 @@ export default {
       }).then(res => {
         switch(this.type){
           case 1:
-            this.count = res.result.songCount;
-            if(this.count){
+            this.total = res.result.songCount;
+            if(this.total){
               this.songs = res.result.songs;
             }
             break;
           case 1000:
             this.playlists = res.result.playlists;
-            this.count = res.result.playlistCount;
+            this.total = res.result.playlistCount;
             break;
           case 100:
             this.artists = res.result.artists;
-            this.count = res.result.artistCount;
+            this.total = res.result.artistCount;
             break;
           case 1014:
             this.videos = res.result.videos;
-            this.count = res.result.videoCount;
+            this.total = res.result.videoCount;
             break;
           default:
              this.songs = res.result.songs;
-            this.count = res.result.songCount;
+            this.total = res.result.songCount;
              break;
         }
       }).catch(err => console.log(err))
-    }
+    },
+    //分页器页码改变事件
+    // handleCurrentChange(currentPage){
+    //   console.log(currentPage);
+    // }    
+
   },
   created(){
     this.keywords = this.$route.params.keywords;
-
+  },
+  mounted(){
+    // this.$nextTick(() => {
+    //   this.show = true; //显示分页器
+    // })
   }
-  // watch:{
-  //   $route(newValue,oldValue){
-  //     this.keywords = newValue.params.keywords;
-  //     console.log(newValue);
-  //     // let keywords = newValue.params.keywords;
-  //   }
-  // },  
-
-  // watch中监听不到$route的变化？路由守卫也无法响应式地展示数据？
-  // beforeRouteUpdate (to, from, next) {
-  //   this.keywords = to.params.keywords;
-  //   next();
-  // },  
 }
 </script>
 
@@ -152,7 +158,7 @@ export default {
       font-size: 22px;
       font-weight: bold;
     }
-    .count{
+    .total{
       color:#666666;
       font-size: 14px;
       margin-left:10px;

@@ -68,7 +68,6 @@ export default {
   },
   computed:{
     ...mapGetters(['playlist','index','currentSong']),
-
   },
   watch:{
     currentSong(newSong){
@@ -88,7 +87,6 @@ export default {
         const audio = this.$refs.audio;
         this.$nextTick(() => {
           audio.play();
-          // this.setPlaying(true)
         })
       })
     },

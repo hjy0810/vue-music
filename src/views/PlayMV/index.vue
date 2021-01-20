@@ -96,19 +96,12 @@ export default {
       totalComment:null,
     }
   },
-  computed:{
-    // mvID(){
-    //   return this.$route.params.mvID;
-    // }
-  },
   methods:{
     getMVUrl(){
       this.$api.getMVUrl({id:this.mvID}).then(res => {
         this.mvUrl = res.data.url;
       })
-    
     },
-
     getMVInfo(){
       this.$api.getMVInfo({mvid:this.mvID}).then(res => {
         this.mvInfo = res.data;
@@ -127,14 +120,6 @@ export default {
         this.totalComment = res.total;
       })
     },
-
-
-
-
-
-
-    
-
   },
   created(){
     this.mvID = this.$route.params.mvID;
@@ -142,33 +127,7 @@ export default {
     this.getMVInfo()
     this.getRelatedMV()
     this.getMVComment()
-
-
-    // 获取mv地址
-    // queryMvAddress({
-    //   id: this.mvID
-    // }).then(res => {
-    //   this.mvUrl = res.data.url;
-    // })
-
-    //获取mv信息
-    // queryMvInfo({mvid:this.mvID}).then(res => {
-    //   this.mvInfo = res.data;
-    //   this.artistCover = this.mvInfo.artists[0].img1v1Url || defaultCover;//有些歌手的img1v1Url数据为null
-    // })
-
-    //获取相关推荐
-    // queryRelatedMv({id:this.mvID}).then(res => {
-    //   this.commandList = res.data.filter((item,index) => index <4);
-    // }) 
-
-    //获取评论数据
-    // queryMvComment({id:this.mvID}).then(res => {
-    //   this.totalComment = res.total;
-    //   this.commentList = res.comments;
-    // })
   }
-
 }
 </script>
 

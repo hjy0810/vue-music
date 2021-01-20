@@ -67,15 +67,6 @@ export default {
     forward(){
       window.history.forward();
     }
-    //搜索防抖
-    // debounceSearch(duration=2){
-    //   console.log(this);
-    //   // if(this.timer) return;
-    //   // this.timer = setTimeout(() => {
-    //   //   this.search();
-    //   //   clearTimeout(this.timer)
-    //   // },duration*1000)
-    // }
 
   },
 }

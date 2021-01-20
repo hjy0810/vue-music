@@ -18,7 +18,6 @@ export default {
   data(){
     return {
       toplist:[]
-
     }
   },
   components:{
@@ -31,14 +30,10 @@ export default {
         this.toplist = res.list;
       })
     },
-
-
-
   },
   created(){
     this.getToplist()
   }
-
 }
 </script>
 

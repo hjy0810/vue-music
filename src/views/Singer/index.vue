@@ -45,14 +45,11 @@
           :singer='item'
         />        
     </ul>
-
-
   </div>
 </template>
 
 <script>
 import SingerItem from '../../components/SingerItem';
-
 export default {
   name:'Singer',
   data(){
@@ -112,8 +109,7 @@ export default {
         type:-1, //分类 默认全部
         initial:-1, //筛选 默认热门
       },
-      singers:[], //
-      el:null,    //懒加载需要用到的 .el-main 元素
+      singers:[], 
     }
   },
   components:{
@@ -151,14 +147,12 @@ export default {
       this.$api.getArtist(this.params).then(res => {
         this.singers = res.artists;
       })
-    }
-    
+    },
   },
   created(){
     this.getFilter();
     this.getArtist();
   },
-
 }
 </script>
 
@@ -195,5 +189,4 @@ export default {
     justify-content: space-between;
   }
 }
-
 </style>

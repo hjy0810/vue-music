@@ -15,23 +15,9 @@
 import AsideNav from '../AsideNav'
 export default {
   name:'Aside',
-  data() {
-      return {
-
-      };
-  },
   components:{
     AsideNav,
   },
-  methods: {
-
-  },
-  computed:{
-
-  },
-  created(){
-
-  }
 }
 </script>
 

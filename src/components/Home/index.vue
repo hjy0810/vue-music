@@ -27,11 +27,6 @@ import Footer from '../Footer';
 
 export default {
   name:'Home',
-  data(){
-    return {
-
-    }
-  },
   computed:{
     ...mapGetters(['currentSong'])
   },
@@ -40,10 +35,6 @@ export default {
     Aside,
     Footer,
   },
-  mounted(){
-
-  }
-  
 }
 </script>
 
