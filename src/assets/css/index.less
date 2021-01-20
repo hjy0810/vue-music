@@ -1,0 +1,131 @@
+@import './variables.less';
+/* 字体大小 */
+.f12{ 
+  font-size:12px 
+}
+.f14{ 
+  font-size:14px 
+}
+.f16{ 
+  font-size:16px 
+}
+.f20{ 
+  font-size:20px 
+}
+
+/* 浮动 */
+.left{ 
+  float:left;
+}
+.right{ 
+  float:right;
+}
+
+/* 定位 */
+.pr{ 
+  position:relative; 
+}
+.pa{ 
+  position:absolute;
+}
+
+/* flex */
+.flex{
+  display:flex
+}
+
+
+.w100{ 
+  width:100%; 
+}
+.h100{ 
+  height:100%; 
+}
+
+/* 清除浮动 */
+.clearfix::before,
+.clearfix::after{
+    content:'';
+    display: table;
+    clear: both;
+}
+
+/* 单行超出省略 */
+.ellipsis{
+  white-space: nowrap; /*禁止文字内容折行*/
+  overflow: hidden; /*超出部分溢出隐 藏*/
+  text-overflow: ellipsis;  /*文字以省 略号的方式隐藏*/
+}
+
+/* 2行超出省略 */
+.ellipsis2{
+  display: -webkit-box; /* 弹性盒模型*/
+  -webkit-box-orient: vertical; /*文字垂直排列 */
+  -webkit-line-clamp:2; /*文字显示的行数*/
+  overflow: hidden; /*超出部分溢出隐藏*/
+}
+
+/* 3行超出省略 */
+.ellipsis3{
+  display: -webkit-box; /* 弹性盒模型*/
+  -webkit-box-orient: vertical; /*文字垂直排列 */
+  -webkit-line-clamp:3; /*文字显示的行数*/
+  overflow: hidden; /*超出部分溢出隐藏*/
+}
+
+/* 导入阿里iconfont样式 */
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+/* 整体布局 */
+html,body{
+  height: 100%;
+  background-color: @color-bg;
+}
+
+#app{
+  height: 100%;
+  min-width: 1000px;
+  color: @color-text;
+}
+#app .el-container{
+  height: 100%;
+}
+
+/* 左侧导航字体颜色 */
+.el-submenu__title{
+  color: @color-text;
+}
+
+/* 子导航行间距 */
+.el-submenu__title{
+line-height: 50px;  
+}
+
+.el-menu-item-group__title{
+  display: none;
+
+}
+
+.el-submenu__title{
+  height: 45px;
+  line-height: 45px;
+}
+// .aside-container .el-menu-vertical-demo .el-menu-item[data-v-9c89dc8a]{
+//   height:30px;
+//   line-height: 30px;
+// }
+// .aside-container .el-menu-vertical-demo .el-menu-item[data-v-9c89dc8a] {
+//   margin-top:0px;
+//   margin-bottom:0px;
+// }
+
+.el-menu-item-group .el-menu-item{
+  height:35px;
+  line-height: 35px;
+}
