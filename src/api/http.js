@@ -5,8 +5,6 @@ import store from '../store';
 import router from '../router';
 import { Message } from 'element-ui';
 
-
-
 /** 
  * 携带当前页面路由跳转登录页，在登录页面完成登录后返回当前页面
  */
@@ -29,28 +27,23 @@ const errorHandle = (status, statusText) => {
     case 401:
       toLogin();
       break;
-    // 403 token过期
-    // 清除token并跳转登录页
+    // 403 token过期,清除token并跳转登录页
     case 403:
-      // tip('登录过期，请重新登录');
       localStorage.removeItem('token');
-      // store.commit('loginSuccess', null);
       setTimeout(() => {
-          toLogin();
+        toLogin();
       }, 1000);
       break;
     // 404请求不存在
     case 404:
-      // Message({
-      //   type:'error',
-      //   message:statusText,
-      //   center:true,
-      //   duration:2000
-      // });
+      Message({
+        type:'error',
+        message:statusText,
+        center:true,
+        duration:2000
+      });
       break;
     default:
-      // console.log(status,other);   
-      // console.log(arguments);   
       Message({
         type:'error',
         message:statusText,
@@ -58,7 +51,6 @@ const errorHandle = (status, statusText) => {
         duration:2000
       })
   }
-
 }
 
 // 创建axios实例
