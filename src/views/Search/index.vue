@@ -47,7 +47,7 @@
         />  
       </ul> 
     </div>
-    <!-- 分页器 -->
+    <!-- 分页器 问题：在上方内容显示之前就会显示分页器-->
     <!-- <div class="pagination" v-if='show'>
       <el-pagination
         @current-change="handleCurrentChange"

@@ -23,7 +23,6 @@ import * as api from './api/api';
 Vue.prototype.utils = utils;
 Vue.prototype.$api = api;
 
-
 Vue.config.productionTip = false
 
 new Vue({

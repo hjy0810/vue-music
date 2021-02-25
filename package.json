@@ -20,8 +20,10 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "axios": "^0.21.1",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "minireset.css": "^0.0.7",
     "vue-template-compiler": "^2.6.11"
   }
 }

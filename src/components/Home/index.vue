@@ -45,7 +45,6 @@ export default {
   background-color: #2B2B2B;
 }
 .el-footer{
-
   width:100%;
   padding-left:0;
   padding-right:0;
