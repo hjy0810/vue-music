@@ -32,11 +32,11 @@
       </ul>       
 
       <ul class="singer-list" v-if='type === 100'>
-          <SingerItem
-            v-for="item in artists"
-            :key='item.id'
-            :singer='item'
-          />     
+        <SingerItem
+          v-for="item in artists"
+          :key='item.id'
+          :singer='item'
+        />     
       </ul>  
 
       <ul class="mv-list" v-if='type === 1014'>

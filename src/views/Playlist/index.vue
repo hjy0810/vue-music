@@ -1,12 +1,12 @@
 <template>
   <div class='playlist' >
     <div class="top clearfix">
-      <img class="playlist-img" :src='detail.coverImgUrl' alt="">
+      <img class="playlist-img" :src='detail.coverImgUrl' alt="" />
       <!-- 歌单信息 -->
       <div class="info">
         <p>{{ detail.name }}</p>
         <div class="avatar clrarfix"> 
-          <img :src='creator.avatarUrl' alt="">
+          <img :src='creator.avatarUrl' alt="" />
           <div>
             <span>{{ creator.nickname }}</span>
             <span>{{ utils.dateFormat(detail.createTime) }}创建</span>

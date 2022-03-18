@@ -90,11 +90,10 @@ export default {
 <style scoped lang='less'>
 .main{
   .recommend{
-    margin: 20px 0 ;
+    margin: 20px 0;
     .title{
       height: 30px;
       line-height: 30px;
-
     }
     .recommend-box{
       min-width: 800px;

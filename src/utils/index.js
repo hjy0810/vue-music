@@ -47,8 +47,9 @@
       return artistArr[0].name ? artistArr[0].name : artistArr[0].userName;
     } 
     return artistArr.reduce((pre,cur) => {
-      return pre.name ? (pre.name + ' / ' + cur.name) : (pre.userName + ' / ' + cur.userName)
-    })
+      const curName = cur.name || cur.userName;
+      return `${pre} / ${curName}`
+    },artistArr[0].name)
   },
 
 

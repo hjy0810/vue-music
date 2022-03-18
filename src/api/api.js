@@ -5,7 +5,8 @@ import { get, post } from './http';
 
 /**
  * 登录
- * id 必选
+ * phone 必选
+ * password 必选
  */
 export const login = (payload) => post('/login/cellphone',payload);
 

@@ -111,8 +111,6 @@ export default {
       top:22px;
       z-index: 10;
       color:#AFAFAF;
-
-
     }
   }
 
